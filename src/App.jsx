@@ -4,15 +4,19 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Template from "./pages/Template";
+import InsectList from "./pages/InsectList";
 
 function App() {
   return (
     <Router>
-      <h1>ZUKAN</h1>
       <nav>
+        <h1>ZUKAN</h1>
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/list">Insect List</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -27,6 +31,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/template" element={<Template />} />
+        <Route path="/list" element={<InsectList />} />
       </Routes>
     </Router>
   );

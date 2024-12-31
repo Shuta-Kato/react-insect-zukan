@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
@@ -10,6 +10,26 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!insectName || !imageUrl || !country) {
+      alert("未入力の項目があります。");
+      return;
+    }
+
+    const newInsectData = {
+      name: insectName,
+      img: imageUrl,
+      country: country,
+    };
+
+    const existingData = JSON.parse(localStorage.getItem("insectList")) || [];
+
+    existingData.push(newInsectData);
+
+    localStorage.setItem("insectList", JSON.stringify(existingData));
+
+    setInsectName("");
+    setImageUrl("");
+    setCountry("");
 
     navigate(`/template?name=${insectName}&img=${imageUrl}&country=${country}`);
   };
@@ -17,8 +37,14 @@ function Home() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const fileUrl = URL.createObjectURL(file);
-      setImageUrl(fileUrl);
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        const base64Image = reader.result;
+        setImageUrl(base64Image);
+      };
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -52,7 +78,6 @@ function Home() {
         </div>
         <button type="submit">新規登録</button>
       </form>
-      <Link to="/template">Template</Link>
     </div>
   );
 }
