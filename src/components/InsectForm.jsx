@@ -75,7 +75,7 @@ function InsectForm() {
 
       <button type="submit">登録</button>
     </form>
-  );
+  );    
 }
 
 export default InsectForm;

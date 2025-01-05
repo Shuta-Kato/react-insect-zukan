@@ -6,15 +6,17 @@ function Template() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state && location.state.insectData) {
-      setInsectData(location.state.insectData);
-    } else {
-      const storedData = localStorage.getItem("insectList");
-      if (storedData) {
-        setInsectData(JSON.parse(storedData));
-      }
+    const queryParams = new URLSearchParams(location.search);
+    const name = queryParams.get("name");
+    const img = queryParams.get("img");
+    const country = queryParams.get("country");
+
+    console.log("クエリパラメータ:", { name, img, country });
+
+    if (name && img && country) {
+      setInsectData({ name, img, country });
     }
-  }, [location.state]);
+  }, [location.search]);
 
   if (!insectData) {
     return <div>昆虫の情報がありません。</div>;
@@ -22,11 +24,13 @@ function Template() {
 
   return (
     <div>
-      <div>
-        <h2>{insectData.name}</h2>
-        <img src={`/uploads/${insectData.img}`} alt={insectData.name} />
-        <p>原産地：{insectData.country}</p>
-      </div>
+      <h2>{insectData.name}</h2>
+      <img
+        src={insectData.img}
+        alt={insectData.name}
+        style={{ maxWidth: "800px" }}
+      />
+      <p>原産地：{insectData.country}</p>
     </div>
   );
 }
