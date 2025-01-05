@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function insectList() {
   const [insectList, setInsectList] = useState([]);
 
   useEffect(() => {
-    const storedInsects = JSON.parse(localStorage.getItem("insectList")) || [];
-    setInsectList(storedInsects);
+    axios
+      .get("http://localhost:5000/api/insects")
+      .then((response) => {
+        setInsectList(response.data);
+      })
+      .catch((error) => {
+        console.error("昆虫の情報取得に失敗しました。", error);
+      });
   }, []);
 
   return (
@@ -19,10 +26,14 @@ function insectList() {
           {insectList.map((insect, index) => (
             <li key={index}>
               <Link
-                to={`/template?name=${insect.name}&img=${insect.img}&country=${insect.country}`}
+                to={`/template?name=${insect.name}&img=/uploads/${insect.img}&country=${insect.country}`}
               >
                 <h3>{insect.name}</h3>
-                <img src={insect.img} alt={insect.name} width="100" />
+                <img
+                  src={`/uploads/${insect.img}`}
+                  alt={insect.name}
+                  width="100"
+                />
                 <p>原産地：{insect.country}</p>
               </Link>
             </li>

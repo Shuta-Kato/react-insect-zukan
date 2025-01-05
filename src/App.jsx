@@ -5,11 +5,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Template from "./pages/Template";
 import InsectList from "./pages/InsectList";
+import zukanIcon from "./assets/zukan_icon.png";
 
 function App() {
   return (
     <Router>
       <nav>
+        <img src={zukanIcon} alt="アプリロゴ" />
         <h1>ZUKAN</h1>
         <ul>
           <li>

@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Template() {
-  const [insectData, setInsectData] = useState({
-    name: "",
-    img: "",
-    country: "",
-  });
+  const [insectData, setInsectData] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const storedData = localStorage.getItem("insectList");
-    if (storedData) {
-      const insectList = JSON.parse(storedData);
-      const lastInsectData = insectList[insectList.length - 1]; 
-      setInsectData(lastInsectData);
+    if (location.state && location.state.insectData) {
+      setInsectData(location.state.insectData);
+    } else {
+      const storedData = localStorage.getItem("insectList");
+      if (storedData) {
+        setInsectData(JSON.parse(storedData));
+      }
     }
-  }, []);
+  }, [location.state]);
 
-  if (!insectData.name || !insectData.img || !insectData.country) {
-    return <div>必要な情報が不足しています。</div>;
+  if (!insectData) {
+    return <div>昆虫の情報がありません。</div>;
   }
 
   return (
     <div>
-      <h2>{insectData.name}</h2>
-      <img src={insectData.img} alt={insectData.name} />
-      <p>原産地：{insectData.country}</p>
+      <div>
+        <h2>{insectData.name}</h2>
+        <img src={`/uploads/${insectData.img}`} alt={insectData.name} />
+        <p>原産地：{insectData.country}</p>
+      </div>
     </div>
   );
 }
