@@ -5,6 +5,8 @@ body {
   background-repeat: repeat;
   background-color: rgba(255, 255, 255, 0.3);
   background-blend-mode: lighten;
+  margin-top: 84px;
+  
 }
 
 .article-container {
@@ -15,6 +17,18 @@ body {
 form {
   width: auto;
   margin: 40px;
+}
+
+nav{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+}
+
+
+button {
+    cursor : pointer;
 }
 
 /* ヘッダーのスタイル */
@@ -139,6 +153,11 @@ nav a {
   font-weight: bold;
   padding: 12px 8px;
   width: 100%;
+  cursor : pointer;
+}
+
+.form-button-box button:hover{
+    color: blue;
 }
 
 .form-files-block {
