@@ -62,9 +62,15 @@ function InsectForm() {
           />
         </div>
 
-        <div class="form-block">
-          <label htmlFor="image" >写真を追加</label>
-          <input type="file" id="image" onChange={handleImageChange} required class="file-button"/>
+        <div class="form-files-block">
+          <label htmlFor="image">写真を追加</label>
+          <input
+            type="file"
+            id="image"
+            onChange={handleImageChange}
+            required
+            class="file-button"
+          />
         </div>
 
         {uploadedUrl && (
@@ -73,12 +79,12 @@ function InsectForm() {
             <img src={uploadedUrl} alt={name} style={{ maxWidth: "200px" }} />
           </div>
         )}
-          <div class="form-button-box">
-            <button type="submit">登録</button>
-          </div>
+        <div class="form-button-box">
+          <button type="submit">登録</button>
+        </div>
       </form>
-      </div>
-  );    
+    </div>
+  );
 }
 
 export default InsectForm;
