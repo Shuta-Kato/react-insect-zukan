@@ -1,0 +1,160 @@
+/* 全体のスタイル */
+body{
+    margin: 0px;
+
+}
+
+.article-container{
+    width: 60%;
+    margin: 20% auto;
+}
+
+form{
+    width: auto;
+    margin: 40px;
+}
+
+
+/* ヘッダーのスタイル */
+
+nav {
+    background-color: white;
+    border-bottom: solid 1.8px #cacaca;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}   
+
+nav ul{
+    margin: 0px ;
+    display: flex;
+}
+
+nav li{
+    background-color: #2b2b2bdd;
+    list-style: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+nav img{
+    width: 48px;
+    height: 48px;
+}
+
+nav h1{
+    font-size: 32px ;
+    margin: 0px;
+    padding-top: 6%;
+    padding-left: 4px;
+}
+
+nav div{
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+
+    
+}
+
+nav a{
+    text-decoration: none;
+    color: #2b2b2bdd;
+}
+
+
+.nav-button{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-right: 1px rgb(125, 125, 125) solid;
+    
+    
+}
+
+/* フォームのスタイル */
+
+.form-head-container{
+    background-color:#2b2b2bdd ;
+    border: none 1px;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+
+.form-head h2{
+    font-size: 20px;
+    color: white;
+    margin: 0px;
+    text-align: center;
+    padding: 8px 4px;
+}
+
+
+.form-content {
+    border: solid 1px black;
+    border-radius: 0px 0px 20px 20px;
+    width: auto;
+
+}
+
+
+.form-block{
+    margin: 20px 20%;
+}
+
+.form-block label{
+    font-weight: bold;
+    display:grid;    
+    font-size: 18px;
+    padding: 8px 0px;
+    
+}
+
+.form-block input{
+    display:grid;
+    width: 94%;
+    padding: 12px 8px;
+
+}
+
+.form-button-box {
+    margin: 0 20%;
+    
+}
+
+.form-button-box button {
+    background-color: #2b2b2bdd;
+    color: white;
+    border: none ;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 8px;
+    width: 100%;
+}
+
+.file-button{
+    padding: 0px;
+    
+}
+
+.file-button::file-selector-button{
+    background-color: white;
+    color:#2b2b2bdd;
+    border: 2px solid #2b2b2bdd ;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    padding: 12px 8px;
+}
+

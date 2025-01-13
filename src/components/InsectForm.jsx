@@ -38,43 +38,46 @@ function InsectForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">昆虫の名前：</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-      </div>
-
-      <div>
-        <label htmlFor="country">原産地：</label>
-        <input
-          type="text"
-          id="country"
-          value={country}
-          onChange={(e) => setCountry(e.target.value)}
-          required
-        />
-      </div>
-
-      <div>
-        <label htmlFor="image">画像：</label>
-        <input type="file" id="image" onChange={handleImageChange} required />
-      </div>
-
-      {uploadedUrl && (
-        <div>
-          <h3>アップロードされた画像：</h3>
-          <img src={uploadedUrl} alt={name} style={{ maxWidth: "200px" }} />
+    <div class="form-content">
+      <form onSubmit={handleSubmit}>
+        <div class="form-block">
+          <label htmlFor="name">昆虫の名前</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
-      )}
 
-      <button type="submit">登録</button>
-    </form>
+        <div class="form-block">
+          <label htmlFor="country">原産地</label>
+          <input
+            type="text"
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            required
+          />
+        </div>
+
+        <div class="form-block">
+          <label htmlFor="image" >写真を追加</label>
+          <input type="file" id="image" onChange={handleImageChange} required class="file-button"/>
+        </div>
+
+        {uploadedUrl && (
+          <div>
+            <h3>アップロードされた画像：</h3>
+            <img src={uploadedUrl} alt={name} style={{ maxWidth: "200px" }} />
+          </div>
+        )}
+          <div class="form-button-box">
+            <button type="submit">登録</button>
+          </div>
+      </form>
+      </div>
   );    
 }
 

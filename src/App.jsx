@@ -6,25 +6,30 @@ import Contact from "./pages/Contact";
 import Template from "./pages/Template";
 import InsectList from "./pages/InsectList";
 import zukanIcon from "./assets/zukan_icon.png";
+import "./styles/style.css";
 
 function App() {
   return (
     <Router>
       <nav>
-        <img src={zukanIcon} alt="アプリロゴ" />
-        <h1>ZUKAN</h1>
+        <Link to="/">
+          <div>
+            <img src={zukanIcon} alt="アプリロゴ" />
+            <h1>ZUKAN</h1>
+          </div>
+        </Link>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" class="nav-button">Home</Link>
           </li>
           <li>
-            <Link to="/list">Insect List</Link>
+            <Link to="/list" class="nav-button">Insect List</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" class="nav-button">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" class="nav-button">Contact</Link>
           </li>
         </ul>
       </nav>

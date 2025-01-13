@@ -37,10 +37,14 @@ function Home() {
   };
 
   return (
-    <div>
-      <h2>図鑑に昆虫を登録する</h2>
-      <InsectForm />
-    </div>
+      <div class="article-container">
+        <div class="form-head-container">
+          <div class="form-head">
+            <h2>図鑑に昆虫を登録する</h2>
+          </div>
+        </div>
+        <InsectForm />
+      </div>
   );
 }
 
