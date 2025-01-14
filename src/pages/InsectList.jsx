@@ -24,23 +24,23 @@ function insectList() {
       ) : (
         <ul>
           {insectList.map((insect, index) => (
-            <li key={index}>
-              <Link
-                to={`/template?name=${encodeURIComponent(
-                  insect.name
-                )}&img=${encodeURIComponent(
-                  "/uploads/" + insect.img
-                )}&country=${encodeURIComponent(insect.country)}`}
-              >
+            <Link
+            to={`/template?name=${encodeURIComponent(
+              insect.name
+            )}&img=${encodeURIComponent(
+              "/uploads/" + insect.img
+            )}&country=${encodeURIComponent(insect.country)}`}
+          >
+            <li key={index} class="list-container">
+              <img
+                src={`/uploads/${insect.img}`}
+                alt={insect.name}/>
+              <div class="list-items">
                 <h3>{insect.name}</h3>
-                <img
-                  src={`/uploads/${insect.img}`}
-                  alt={insect.name}
-                  width="100"
-                />
-              </Link>
-              <p>原産地：{insect.country}</p>
+                <p>原産地：{insect.country}</p>
+              </div>
             </li>
+            </Link>
           ))}
         </ul>
       )}
