@@ -19,30 +19,28 @@ function insectList() {
   return (
     <div>
       <div class="page-title-box">
-        <h2>昆虫一覧</h2>
+        <h2>図鑑</h2>
       </div>
-      
+
       {insectList.length === 0 ? (
         <p>昆虫が登録されていません。</p>
       ) : (
         <ul class="list-linkText-color">
           {insectList.map((insect, index) => (
             <Link
-            to={`/template?name=${encodeURIComponent(
-              insect.name
-            )}&img=${encodeURIComponent(
-              "/uploads/" + insect.img
-            )}&country=${encodeURIComponent(insect.country)}`}
-          >
-            <li key={index} class="list-container">
-              <img
-                src={`/uploads/${insect.img}`}
-                alt={insect.name}/>
-              <div class="list-items">
-                <h3>{insect.name}</h3>
-                <p>原産地：{insect.country}</p>
-              </div>
-            </li>
+              to={`/template?name=${encodeURIComponent(
+                insect.name
+              )}&img=${encodeURIComponent(
+                "/uploads/" + insect.img
+              )}&country=${encodeURIComponent(insect.country)}`}
+            >
+              <li key={index} class="list-container">
+                <img src={`/uploads/${insect.img}`} alt={insect.name} />
+                <div class="list-items">
+                  <h3>{insect.name}</h3>
+                  <p>原産地：{insect.country}</p>
+                </div>
+              </li>
             </Link>
           ))}
         </ul>

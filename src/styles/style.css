@@ -1,6 +1,11 @@
 /* 全体のスタイル */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
+.material-icons {
+  font-size: 24px;
+  padding-right: 4px;
+}
+
 body {
   margin: 0px;
   background-image: url(../assets/background-leafs.jpg);
@@ -24,10 +29,10 @@ button {
   cursor: pointer;
 }
 
-h2{
-    font-size: 24px;
-    text-align: center;
-    margin: 0px;
+h2 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0px;
 }
 
 h3 {
@@ -35,20 +40,19 @@ h3 {
   margin: 0px;
 }
 
-p{
+p {
   margin: 0px;
 }
 
-ul{
+ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   padding: 0px;
-
 }
 
-li{
+li {
   background-color: #ffffff;
   list-style: none;
 }
@@ -57,7 +61,7 @@ a {
   text-decoration: none;
 }
 
-.page-title-box{
+.page-title-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,10 +69,8 @@ a {
   background-color: #00000084;
 }
 
-.page-title-box h2{
+.page-title-box h2 {
   color: white;
-  
-  
 }
 
 /* ヘッダーのスタイル */
@@ -138,6 +140,9 @@ nav li:hover {
   padding-right: 18px;
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* フォームのスタイル */
@@ -241,27 +246,27 @@ nav li:hover {
 }
 
 /* リストのスタイル */
-.list-container img{
+.list-container img {
   width: 320px;
   border-radius: 8px 8px 0px 0px;
   border-bottom: 1px solid #b6b6b6;
 }
 
-.list-container{
+.list-container {
   border: 1px solid white;
   border-radius: 8px;
   margin: 0px 8px 8px 8px;
 }
 
-.list-container:hover{
+.list-container:hover {
   transform: scale(1.05, 1.05);
   transition: 0.2s;
 }
 
-.list-items{
+.list-items {
   padding: 12px 12px;
 }
 
-a{
+a {
   color: #2b2b2b;
 }

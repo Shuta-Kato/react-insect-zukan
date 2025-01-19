@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 
 function About() {
   return (
     <div>
       <div class="page-title-box">
-        <h2>About Page</h2>
+        <h2>ZUKANの使い方</h2>
       </div>
       <p>This is the About Page.</p>
-
     </div>
   );
 }

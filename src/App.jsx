@@ -20,16 +20,28 @@ function App() {
         </Link>
         <ul>
           <li>
-            <Link to="/" class="nav-button">Home</Link>
+            <Link to="/" class="nav-button">
+              <span class="material-icons">add_circle</span>
+              登録
+            </Link>
           </li>
           <li>
-            <Link to="/list" class="nav-button">Insect List</Link>
+            <Link to="/list" class="nav-button">
+              <span class="material-icons">view_list</span>
+              図鑑
+            </Link>
           </li>
           <li>
-            <Link to="/about" class="nav-button">About</Link>
+            <Link to="/about" class="nav-button">
+              <span class="material-icons">help</span>
+              使い方
+            </Link>
           </li>
           <li>
-            <Link to="/contact" class="nav-button">Contact</Link>
+            <Link to="/contact" class="nav-button">
+              <span class="material-icons">email</span>
+              お問い合わせ
+            </Link>
           </li>
         </ul>
       </nav>
