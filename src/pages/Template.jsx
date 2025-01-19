@@ -24,7 +24,9 @@ function Template() {
 
   return (
     <div>
-      <h2>{insectData.name}</h2>
+      <div class="page-title-box">
+        <h2>{insectData.name}</h2>
+      </div>
       <img
         src={insectData.img}
         alt={insectData.name}

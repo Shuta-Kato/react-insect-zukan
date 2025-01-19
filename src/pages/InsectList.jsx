@@ -18,11 +18,14 @@ function insectList() {
 
   return (
     <div>
-      <h2>昆虫一覧</h2>
+      <div class="page-title-box">
+        <h2>昆虫一覧</h2>
+      </div>
+      
       {insectList.length === 0 ? (
         <p>昆虫が登録されていません。</p>
       ) : (
-        <ul>
+        <ul class="list-linkText-color">
           {insectList.map((insect, index) => (
             <Link
             to={`/template?name=${encodeURIComponent(
