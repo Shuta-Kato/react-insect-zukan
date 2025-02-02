@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { createElement } from "react";
 
 function InsectForm() {
   const [name, setName] = useState("");
@@ -35,6 +36,13 @@ function InsectForm() {
     } catch (error) {
       console.error("アップロードに失敗しました", error);
     }
+
+    alert("登録が完了しました。");
+
+    setName("");
+    setCountry("");
+    setSelectedFile("");
+    setUploadedUrl("");
   };
 
   return (
